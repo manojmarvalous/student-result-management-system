@@ -1,0 +1,108 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f0f2f5;
+    padding: 40px 20px;
+    color: #2c3e50;
+}
+
+/* Page Heading */
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+/* Add New Combination Button */
+a[href*="subject-combinations/add"] {
+    display: inline-block;
+    background-color: #6f42c1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+a[href*="subject-combinations/add"]:hover {
+    background-color: #5a32a3;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Hover effect for rows */
+table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Action links */
+td a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: background-color 0.2s ease;
+}
+
+/* Edit */
+td a[href*="edit"] {
+    color: #007bff;
+}
+
+td a[href*="edit"]:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Delete */
+td a[href*="delete"] {
+    color: #dc3545;
+}
+
+td a[href*="delete"]:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}

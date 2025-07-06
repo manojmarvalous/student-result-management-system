@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Subject Combinations</title>
+	<link rel="stylesheet" th:href="@{/css/manage_combinations.css}">
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<a th:href="@{/admin/subject-combinations/add}">Add New Combination</a>
+<br/><br/>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Class</th>
+        <th>Subject</th>
+        <th>Active</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="combo : ${combinations}">
+        <td th:text="${combo.id}"></td>
+        <td th:text="${combo.classEntity.className}"></td>
+        <td th:text="${combo.subject.subjectName}"></td>
+        <td th:text="${combo.active ? 'Yes' : 'No'}"></td>
+        <td>
+            <a th:href="@{'/admin/subject-combinations/edit/' + ${combo.id}}">Edit</a> |
+            <a th:href="@{'/admin/subject-combinations/delete/' + ${combo.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+
+</body>
+</html>

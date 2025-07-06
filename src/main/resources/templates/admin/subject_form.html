@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Subject Form</title>
+	<link rel="stylesheet" th:href="@{/css/subject_form.css}">
+
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<form th:action="@{/admin/subjects/save}" th:object="${subject}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Subject Name:</label>
+    <input type="text" th:field="*{subjectName}" required/>
+    <br/><br/>
+    <button type="submit">Save</button>
+</form>
+
+<br/>
+<a th:href="@{/admin/subjects}">Back to Subject List</a>
+
+</body>
+</html>

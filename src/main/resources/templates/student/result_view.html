@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Result</title>
+	<link rel="stylesheet" th:href="@{/css/result_view.css}">
+</head>
+<body>
+
+<h2>Student Result</h2>
+
+<p th:text="'Name: ' + ${student.name}"></p>
+<p th:text="'Roll No: ' + ${student.rollNo}"></p>
+<p th:text="'Class: ' + ${student.studentClass.className}"></p>
+
+<table border="1">
+    <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+    </tr>
+    <tr th:each="r : ${results}">
+        <td th:text="${r.subject.subjectName}"></td>
+        <td th:text="${r.marks}"></td>
+    </tr>
+    <tr>
+        <td><b>Total</b></td>
+        <td th:text="${total}"></td>
+    </tr>
+</table>
+
+<br/>
+<a th:href="@{'/result/pdf/' + ${student.rollNo}}">Download PDF</a>
+
+</body>
+</html>

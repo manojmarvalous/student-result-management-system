@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Student Form</title>
+	<link rel="stylesheet" th:href="@{/css/student_form.css}">
+
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<form th:action="@{/admin/students/save}" th:object="${student}" method="post">
+    <label>Roll No:</label>
+    <input type="text" th:field="*{rollNo}" required/><br/><br/>
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required/><br/><br/>
+
+    <label>Year:</label>
+    <input type="text" th:field="*{year}" required/><br/><br/>
+
+    <label>Class:</label>
+    <select th:field="*{studentClass}">
+        <option th:each="cls : ${classes}" th:value="${cls.id}" th:text="${cls.className}"></option>
+    </select><br/><br/>
+
+    <button type="submit">Save</button>
+</form>
+
+<br/>
+<a th:href="@{/admin/students}">Back to Student List</a>
+
+</body>
+</html>

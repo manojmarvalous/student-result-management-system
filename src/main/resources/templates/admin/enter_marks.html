@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enter Marks</title>
+	<link rel="stylesheet" th:href="@{/css/enter_marks.css}">
+</head>
+<body>
+
+<h2>Enter Marks - Step 2: Fill Subject Marks</h2>
+<p th:text="'Student: ' + ${student.name} + ' (' + ${student.rollNo} + ')'"></p>
+
+<form th:action="@{/admin/results/save}" method="post">
+    <input type="hidden" name="rollNo" th:value="${student.rollNo}" />
+
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr th:each="combo : ${combinations}">
+            <td th:text="${combo.subject.subjectName}"></td>
+            <td>
+                <input type="number"
+                       min="0" max="100"
+                       th:name="'subject_' + ${combo.subject.id}"
+                       th:value="${subjectMarks[combo.subject.id]}">
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+    <button type="submit">Save Marks</button>
+</form>
+<br><br>
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+</body>
+</html>

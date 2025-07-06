@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Check Result</title>
+	<link rel="stylesheet" th:href="@{/css/result_form.css}">
+</head>
+<body>
+
+<h2>Student Result </h2>
+
+<form th:action="@{/result/view}" method="post">
+    <label>Enter Roll Number:</label>
+    <input type="text" name="rollNo" required/>
+    <button type="submit">Check Result</button>
+</form>
+
+<p style="color:red;" th:if="${error}" th:text="${error}"></p>
+
+</body>
+</html>

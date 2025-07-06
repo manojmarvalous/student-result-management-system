@@ -1,0 +1,105 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    padding: 40px 20px;
+    color: #2c3e50;
+}
+
+/* Page Heading */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Add New Class Button Link */
+a[href*="add"] {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+a[href*="add"]:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Table Head */
+table th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table Body */
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+}
+
+/* Table Row Hover */
+table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Actions links */
+td a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+td a:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Delete link specific style */
+td a[href*="delete"] {
+    color: #dc3545;
+}
+
+td a[href*="delete"]:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+

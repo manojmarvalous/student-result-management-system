@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Combination Form</title>
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<form th:action="@{/admin/subject-combinations/save}" th:object="${combination}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Class:</label>
+    <select th:field="*{classEntity}">
+        <option th:each="cls : ${classes}" th:value="${cls.id}" th:text="${cls.className}"></option>
+    </select><br/><br/>
+
+    <label>Subject:</label>
+    <select th:field="*{subject.id}">
+        <option th:each="sub : ${subjects}" th:value="${sub.id}" th:text="${sub.subjectName}"></option>
+    </select><br/><br/>
+
+    <label>Active:</label>
+    <input type="checkbox" th:field="*{active}" /> Yes
+    <br/><br/>
+
+    <button type="submit">Save</button>
+</form>
+
+<br/>
+<a th:href="@{/admin/subject-combinations}">Back to Combinations</a>
+
+</body>
+</html>

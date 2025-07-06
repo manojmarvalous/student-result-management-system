@@ -1,0 +1,45 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #dce35b, #45b649);
+    background-image: url('/css/photos/results.jpg'); /* path to your logo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* adjust as needed */
+    background-attachment: fixed;
+    opacity: 1;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 30px ;
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+a:hover {
+    background-color: #333;
+    color: #fff;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Manage Students</title>
+	<link rel="stylesheet" th:href="@{/css/manage_students.css}">
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<a th:href="@{/admin/students/add}">Register New Student</a>
+<br/><br/>
+
+<table border="1">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Class</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="stu : ${students}">
+        <td th:text="${stu.rollNo}"></td>
+        <td th:text="${stu.name}"></td>
+        <td th:text="${stu.year}"></td>
+        <td th:text="${stu.studentClass.className}"></td>
+        <td>
+            <a th:href="@{'/admin/students/edit/' + ${stu.rollNo}}">Edit</a> |
+            <a th:href="@{'/admin/students/delete/' + ${stu.rollNo}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+
+</body>
+</html>

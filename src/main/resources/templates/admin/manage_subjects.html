@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Manage Subjects</title>
+	<link rel="stylesheet" th:href="@{/css/manage_subjects.css}">
+</head>
+<body>
+
+<h2>Subject List</h2>
+
+
+
+<a th:href="@{/admin/subjects/add}">Add New Subject</a>
+<br/><br/>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Subject Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="sub : ${subjects}">
+        <td th:text="${sub.id}"></td>
+        <td th:text="${sub.subjectName}"></td>
+        <td>
+            <a th:href="@{'/admin/subjects/edit/' + ${sub.id}}">Edit</a> |
+            <a th:href="@{'/admin/subjects/delete/' + ${sub.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+
+</body>
+</html>

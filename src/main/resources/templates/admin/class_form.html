@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Class Form</title>
+	<link rel="stylesheet" th:href="@{/css/class_form.css}">
+
+</head>
+<body>
+
+<h2 th:text="${pageTitle}"></h2>
+
+<form th:action="@{/admin/classes/save}" th:object="${classEntity}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Class Name:</label>
+    <input type="text" th:field="*{className}" required/>
+    <br/><br/>
+    <button type="submit">Save</button>
+</form>
+
+<br/>
+<a th:href="@{/admin/classes}">Back to Class List</a>
+
+</body>
+</html>

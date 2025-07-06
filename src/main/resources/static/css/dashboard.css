@@ -1,0 +1,97 @@
+/* Reset and base setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #2c3e50;
+}
+
+/* Header */
+h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Horizontal underline */
+hr {
+    width: 80px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+}
+
+/* Navigation container */
+nav {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* Grid layout for menu items */
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Each menu card */
+nav ul li {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+nav ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Link style */
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+/* Link hover */
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 18px;
+	font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    text-decoration: underline;
+}
+
+.logout-link:hover {
+    color: #007BFF;
+}
+

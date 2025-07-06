@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enter Student Marks</title>
+	<link rel="stylesheet" th:href="@{/css/select_student_result.css}">
+</head>
+<body>
+
+<h2>Enter Marks - Step 1: Select Student</h2>
+
+<form th:action="@{/admin/results/enter}" method="post">
+    <label>Select Class:</label>
+    <select name="classId">
+        <option th:each="cls : ${classes}" th:value="${cls.id}" th:text="${cls.className}"></option>
+    </select><br/><br/>
+
+    <label>Enter Roll No:</label>
+    <input type="text" name="rollNo" required/><br/><br/>
+
+    <button type="submit">Next</button>
+</form>
+<p th:if="${error}" th:text="${error}" class="error-message"></p>
+<p th:if="${message}" th:text="${message}" class="success-message"></p>
+
+<br><br>
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+
+</body>
+</html>

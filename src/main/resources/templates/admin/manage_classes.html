@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Manage Classes</title>
+	<link rel="stylesheet" th:href="@{/css/manage_classes.css}">
+</head>
+<body>
+
+<h2>Class List</h2>
+
+<!-- Success or error messages -->
+<div th:if="${message}" style="color: green; font-weight: bold;" th:text="${message}"></div>
+<div th:if="${error}" style="color: red; font-weight: bold;" th:text="${error}"></div>
+
+
+<a th:href="@{/admin/classes/add}">Add New Class</a>
+<br/><br/>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Class Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="cls : ${classes}">
+        <td th:text="${cls.id}"></td>
+        <td th:text="${cls.className}"></td>
+        <td>
+            <a th:href="@{'/admin/classes/edit/' + ${cls.id}}">Edit</a> |
+            <a th:href="@{'/admin/classes/delete/' + ${cls.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+<a th:href="@{/admin/dashboard}" class="back-link">← Back to Dashboard</a>
+
+</body>
+</html>

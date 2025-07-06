@@ -1,0 +1,107 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f9f9f9;
+    padding: 40px 20px;
+    color: #2c3e50;
+}
+
+/* Heading */
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Register Student Button */
+a[href*="students/add"] {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+a[href*="students/add"]:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 15px;
+}
+
+table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Action Links */
+td a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Edit Link */
+td a[href*="edit"] {
+    color: #007BFF;
+}
+
+td a[href*="edit"]:hover {
+    background-color: rgba(0,123,255,0.1);
+}
+
+/* Delete Link */
+td a[href*="delete"] {
+    color: #dc3545;
+}
+
+td a[href*="delete"]:hover {
+    background-color: rgba(220,53,69,0.1);
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
