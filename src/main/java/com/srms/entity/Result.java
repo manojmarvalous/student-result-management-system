@@ -14,7 +14,7 @@ public class Result {
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
-    private int marks;
+    private Integer marks;
 
 	public Long getId() {
 		return id;

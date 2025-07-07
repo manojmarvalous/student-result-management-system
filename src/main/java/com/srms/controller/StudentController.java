@@ -49,7 +49,25 @@ public class StudentController {
 
     @GetMapping("/delete/{rollNo}")
     public String deleteStudent(@PathVariable String rollNo) {
+        System.out.println(">>>> Trying to delete student with rollNo: " + rollNo);
+
+        Student before = studentService.getStudentByRollNo(rollNo);
+        if (before == null) {
+            System.out.println(">>>> Student not found before delete. Nothing to do.");
+        } else {
+            System.out.println(">>>> Student exists: " + before.getName());
+        }
+
         studentService.deleteStudent(rollNo);
+
+        Student after = studentService.getStudentByRollNo(rollNo);
+        if (after == null) {
+            System.out.println(">>>> Deletion SUCCESSFUL.");
+        } else {
+            System.out.println(">>>> Deletion FAILED.");
+        }
+
         return "redirect:/admin/students";
     }
+
 }

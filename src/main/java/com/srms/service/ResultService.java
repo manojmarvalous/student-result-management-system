@@ -18,8 +18,12 @@ public class ResultService {
         return resultRepo.findByStudent(student);
     }
 
+    
     public void saveAll(List<Result> results) {
-        resultRepo.saveAll(results);
+        for (Result result : results) {
+            resultRepo.deleteByStudentAndSubject(result.getStudent(), result.getSubject());
+            resultRepo.save(result);
+        }
     }
     
     public int getTotalMarks(List<Result> results) {

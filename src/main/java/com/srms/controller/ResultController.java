@@ -66,7 +66,17 @@ public class ResultController {
         for (Map.Entry<String, String> entry : allParams.entrySet()) {
             if (entry.getKey().startsWith("subject_")) {
                 Long subjectId = Long.parseLong(entry.getKey().replace("subject_", ""));
-                Integer marks = Integer.parseInt(entry.getValue());
+                String value = entry.getValue().trim();
+
+                if (value.isEmpty()) continue;  // skip if marks not entered
+
+                Integer marks;
+                try {
+                    marks = Integer.parseInt(value);
+                } catch (NumberFormatException e) {
+                    continue; // or log an error, skip invalid entry
+                }
+
 
                 Subject subject = new Subject();
                 subject.setId(subjectId);
