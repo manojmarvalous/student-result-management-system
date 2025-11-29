@@ -1,12 +1,16 @@
-# Stage 1: Build the JAR using Maven
-FROM maven:3.9.6-eclipse-temurin-17 AS builder
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+# Dockerfile for student-result-system
 
-# Stage 2: Run the built JAR
+# 1. Use an official OpenJDK 17 runtime as base image
 FROM openjdk:17-jdk-slim
+
+# 2. Set working directory inside the container
 WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+
+# 3. Copy the jar file from your local target folder to the container
+COPY target/student-result-system-0.0.1-SNAPSHOT.jar app.jar
+
+# 4. Expose the port your Spring Boot app runs on
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# 5. Command to run your Spring Boot jar
+ENTRYPOINT ["java","-jar","app.jar"]
