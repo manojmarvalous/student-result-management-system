@@ -73,10 +73,10 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Error Message */
+/* Error Message 
 p[th\\:if="${error}"] {
     color: #e74c3c;
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
-}
+} */

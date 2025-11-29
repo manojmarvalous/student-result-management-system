@@ -64,9 +64,10 @@
 		</dependency>
 
 		<!-- ✅ MySQL JDBC Driver (works with MariaDB too) -->
+<!-- ✅ MySQL Driver for Clever Cloud -->
 <dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
     <scope>runtime</scope>
 </dependency>
 		<dependency>
