@@ -1,16 +1,31 @@
-# Dockerfile for student-result-system
-
-# 1. Use an official OpenJDK 17 runtime as base image
-FROM openjdk:17-jdk-slim
-
-# 2. Set working directory inside the container
+# ================
+# Stage 1: Build JAR
+# ================
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# 3. Copy the jar file from your local target folder to the container
-COPY target/student-result-system-0.0.1-SNAPSHOT.jar app.jar
+# Copy pom.xml first to download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# 4. Expose the port your Spring Boot app runs on
+# Copy the rest of the project
+COPY src ./src
+
+# Build the application
+RUN mvn clean package -DskipTests
+
+
+# ==================
+# Stage 2: Run the JAR
+# ==================
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+
+# Copy JAR from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose Spring Boot port
 EXPOSE 8080
 
-# 5. Command to run your Spring Boot jar
+# Run the application
 ENTRYPOINT ["java","-jar","app.jar"]
